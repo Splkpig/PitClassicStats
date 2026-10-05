@@ -25,7 +25,7 @@ class simpleView(discord.ui.View):
         docData = dataPP["data"]["doc"]
 
         currentXP = docData["xp"]
-        goalXP = float(read_specific_line("../PitStats/useful_things/pitdata/xp_sums.txt", globalPrestige - 1))
+        goalXP = float(read_specific_line("useful_things/pitdata/xp_sums.txt", globalPrestige - 1))
         goalXPFromFinalPrestige = pit_functions.calculateXPForLevel(globalPrestige, globalLevel)
         goalXP += goalXPFromFinalPrestige
         currentPrestige = len(dataPP["data"]["prestiges"]) - 1

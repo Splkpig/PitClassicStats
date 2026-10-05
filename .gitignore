@@ -2,3 +2,6 @@
 /.idea/
 /storage/
 *__pycache__*
+.venv
+pit_classic_stats.service
+api

@@ -2,11 +2,6 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 
-# Create the embeds for the pages in the help command
-pitpandaSignatures = discord.Embed(title="PitPanda Signatures", color=discord.Color.greyple())
-pitpandaSignatures.add_field(name="/prestige-level *player*", value="Displays a player's prestige and level PitPanda signature", inline=False)
-pitpandaSignatures.add_field(name="/profile *player*", value="Displays a player's profile PitPanda signature", inline=False)
-
 prestigeCalculations = discord.Embed(title="Prestige Calculations", color=discord.Color.greyple())
 prestigeCalculations.add_field(name="/prestige-info *player*", value="Displays a player's prestige progress", inline=False)
 prestigeCalculations.add_field(name="/xp-until *player*", value="Calculates the needed XP until reaching a certain Prestige and Level", inline=False)
@@ -19,30 +14,7 @@ stats = discord.Embed(title="Stats", color=discord.Color.greyple())
 stats.add_field(name="/overview *player*", value="Displays an overview of the player's stats", inline=False)
 stats.add_field(name="/compare *player1* *player2*", value="Compares the overview stats of two players", inline=False)
 
-leaderboards = discord.Embed(title="Leaderboards", color=discord.Color.greyple())
-leaderboards.add_field(name="/leaderboard *leaderboard*", value="Displays the leaderboards for a certain leaderboard", inline=False)
-leaderboards.add_field(name="/leaderboard-combat *leaderboard*", value="Displays the leaderboards for a certain combat related leaderboard", inline=False)
-leaderboards.add_field(name="/leaderboards", value="Displays the top 10 players for each leaderboard", inline=False)
-leaderboards.add_field(name="/leaderboard-positions *player*", value="Displays the 25 highest leaderboard positions for a player", inline=False)
-
-sessions = discord.Embed(title="Sessions", color=discord.Color.greyple())
-sessions.add_field(name="/session-start *player*", value="Starts a stat tracking session for a player", inline=False)
-sessions.add_field(name="/session", value="Views your current stat tracking session", inline=False)
-sessions.add_field(name="/session-end", value="Ends your current stat tracking session", inline=False)
-
-upgrades = discord.Embed(title="Upgrades", color=discord.Color.greyple())
-upgrades.add_field(name="/upgrades *player*", value="Shows most purchased upgrades for a player", inline=False)
-
-verification = discord.Embed(title="Verification", color=discord.Color.greyple())
-verification.add_field(name="/verify *player*", value="Verifies a player's Hypixel account", inline=False)
-verification.add_field(name="/verify-manual *player* *user*", value="Manually verifies a player's Hypixel account", inline=False)
-verification.add_field(name="/create-prestige-roles", value="Automatically create all the prestige roles", inline=False)
-
-
-funCommands = discord.Embed(title="Fun Commands", color=discord.Color.greyple())
-funCommands.add_field(name="/jenna *player*", value="Compares a player's yapping to Jenna's", inline=False)
-
-helpPages = [pitpandaSignatures, prestigeCalculations, mapQuests, stats, leaderboards, sessions, upgrades, verification, funCommands]
+helpPages = [prestigeCalculations, mapQuests, stats]
 currentPage = -1
 
 

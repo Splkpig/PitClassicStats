@@ -66,30 +66,30 @@ def getBracketColorEmoji(prestige: int):
 
 # Calculate the xp needed for a certain level within a prestige
 def calculateXPForLevel(prestige: int, level: int):
-    prestigeMultiplier = float(read_specific_line("../PitStats/useful_things/pitdata/xp_multipliers.txt", prestige))
+    prestigeMultiplier = float(read_specific_line("useful_things/pitdata/xp_multipliers.txt", prestige))
     levelTensChunk = int(level / 10)
     levelsAfterTen = level - (levelTensChunk * 10)
 
     totalXP = 0
     for i in range(0, levelTensChunk):
         totalXP += (prestigeMultiplier * int(
-            read_specific_line("../PitStats/useful_things/pitdata/base_level_xp.txt", i))) * 10
+            read_specific_line("useful_things/pitdata/base_level_xp.txt", i))) * 10
 
     totalXP += (prestigeMultiplier * int(
-        read_specific_line("../PitStats/useful_things/pitdata/base_level_xp.txt", levelTensChunk))) * levelsAfterTen
+        read_specific_line("useful_things/pitdata/base_level_xp.txt", levelTensChunk))) * levelsAfterTen
 
     return totalXP
 
 
 # Calculate the current level within a prestige based off a player's total xp
-def xpToLevel(prestige: int, xp: int):
-    prestigeMultiplier = float(read_specific_line("../PitStats/useful_things/pitdata/xp_multipliers.txt", prestige))
+def xpToLevel(prestige: int, xp: int | float):
+    prestigeMultiplier = float(read_specific_line("useful_things/pitdata/xp_multipliers.txt", prestige))
     xpOfPrestige: int = 0
 
     for i in range(0, 13):
         for j in range(0, 10):
             xpOfPrestige += int(
-                read_specific_line("../PitStats/useful_things/pitdata/base_level_xp.txt", i)) * prestigeMultiplier
+                read_specific_line("useful_things/pitdata/base_level_xp.txt", i)) * prestigeMultiplier
             if xpOfPrestige > xp:
                 return i * 10 + j
     return 120
